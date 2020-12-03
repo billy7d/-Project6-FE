@@ -10,7 +10,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { QuestionComponent } from 'app/question/question.component';
+// import { QuestionComponent } from 'app/question/question.component';
 import { UserProfileComponent } from 'app/user-profile/user-profile.component';
 import { TableListComponent } from 'app/table-list/table-list.component';
 import { IconsComponent } from 'app/icons/icons.component';
@@ -32,7 +32,7 @@ import { IconsComponent } from 'app/icons/icons.component';
     UserProfileComponent,
     TableListComponent,
     IconsComponent,
-    QuestionComponent
+    // QuestionComponent
   ]
 })
 
