@@ -26,9 +26,10 @@ export class ShowListSongComponent implements OnInit {
     description: "",
     songQuantity: "",
     dateCreated:"",
-    view:Number
+    view:Number,
+    linkImg:""
   }
-
+  playlists:any=[];
   currentUser: any;
   constructor(private http: HttpClient,private token: TokenStorageService,private data: DataService) { }
 
@@ -43,14 +44,13 @@ getAllSong(){
       this.songs= res;}, err => {  window.alert("Sai rồi bạn!")})
 }
 getAllPlaylist(){
+  debugger
   this.http.get("http://localhost:8080/playlists/newPlaylist")
   .subscribe(res => {
-     this.playlist= res;}, 
-     err => {  window.alert("Sai rồi bạn!")})
+    debugger
+     this.playlist= res;
+    }, err => {  window.alert("Sai rồi bạn!")})
 }
 
-listen(i){
-  debugger
-  this.data.changeMessage(i);
-}
+
 }

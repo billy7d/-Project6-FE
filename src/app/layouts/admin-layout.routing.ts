@@ -19,5 +19,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'hitSong',        component: QuestionComponent},
     { path: 'createSong',     component: SongCreateComponent},
     { path: 'myListSong', component: SongOfUserComponent},
-    { path: 'myPlaylist', component: ShowCreatorPlaylistComponent}
+    { path: 'myPlaylist', component: ShowCreatorPlaylistComponent},
+    { path: 'createPlaylist', component: AddPlaylistComponent},
 ];

@@ -18,6 +18,7 @@ export class AddPlaylistComponent implements OnInit {
     creator:{
       "id": null
     },
+    linkImg:""
   }
   
   currentUser: any;
