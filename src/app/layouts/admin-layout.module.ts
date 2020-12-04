@@ -21,6 +21,7 @@ import { ShowListSongComponent } from 'app/action-component/show-list-song/show-
 import { SongCreateComponent } from 'app/action-component/song-create/song-create.component';
 import { AddPlaylistComponent } from 'app/action-component/playlist/add-playlist/add-playlist.component';
 import { ShowCreatorPlaylistComponent } from 'app/action-component/show-creator-playlist/show-creator-playlist.component';
+import { SongOfUserComponent } from 'app/action-component/song-of-user/song-of-user.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ShowCreatorPlaylistComponent } from 'app/action-component/show-creator-
     ShowListSongComponent,
     SongCreateComponent,
     AddPlaylistComponent,
-    ShowCreatorPlaylistComponent
+    ShowCreatorPlaylistComponent,
+    SongOfUserComponent
   ]
 })
 
