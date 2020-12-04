@@ -45,7 +45,8 @@ getAllSong(){
 getAllPlaylist(){
   this.http.get("http://localhost:8080/playlists/newPlaylist")
   .subscribe(res => {
-     this.playlist= res;}, err => {  window.alert("Sai rồi bạn!")})
+     this.playlist= res;}, 
+     err => {  window.alert("Sai rồi bạn!")})
 }
 
 listen(i){
