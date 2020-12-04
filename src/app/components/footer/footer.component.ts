@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from 'app/_services/common.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   test : Date = new Date();
-  
-  constructor() { }
-
+  constructor(private service: DataService) { }
+  data: any= [];
   ngOnInit() {
+    this.service.currentMessage.subscribe(message => this.data = message);
   }
+  
 
 }

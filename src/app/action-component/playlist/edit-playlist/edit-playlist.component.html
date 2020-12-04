@@ -1,0 +1,39 @@
+<p>edit-playlist works!</p>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>name</th>
+    <th>music type</th>
+    <th>description</th>
+
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input type="text" [(ngModel)]="playlist.name" required ngModel name="name" #name="ngModel"></td>
+
+
+    <td><input type="text" [(ngModel)]="playlist.musicType" required ngModel name="musicType" #musicType="ngModel"></td>
+
+
+    <td><input type="text" [(ngModel)]="playlist.description" required  ngModel name="description" #description="ngModel"></td>
+
+
+    <td><button class="btn btn-secondary" (click)="editPlaylist(playlist.id)">Update</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="name.errors?.required">
+  Name is required
+</div>
+<div *ngIf="musicType.errors?.required">
+  Music type  is required
+</div>
+<div *ngIf="description.errors?.required">
+  Description is required
+</div>
+
+

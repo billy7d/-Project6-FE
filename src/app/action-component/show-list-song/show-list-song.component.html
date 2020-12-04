@@ -1,0 +1,62 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">List song mới được thêm</h4>
+                        <p class="card-category"> Here you are? </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                               
+                                <tbody *ngFor="let i of songs">
+                                    <tr>
+                                        <td><img src={{i.linkImg}} width="90px"></td>
+                                        <td>{{i.name}}</td>
+                                        <td>{{i.author}}</td>
+                                        <td><audio controls><source src={{i.linkMp3}}></audio></td>
+                                       
+                                        <td>{{i.musicType}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Các playlist mới được thêm</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Music type </th>
+                                    <th>Description</th>
+                                    <th>dateCreated</th>
+                                </thead>
+                                <tbody *ngFor="let a of playlist, index as i">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>{{a.name}}</td>
+                                        <td>{{a.musicType}}</td>
+                                        <td>{{a.description}}</td>
+                                        <td>{{a.dateCreated}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
