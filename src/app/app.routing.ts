@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
- 
 import { LoginComponent } from './action-component/login/login.component';
-import { AdminLayoutComponent } from './layouts/admin-layout.component';
 import { RegisterComponent } from './action-component/register/register.component';
+import { AdminLayoutComponent } from './layouts/admin-layout.component';
+
 
 const routes: Routes =[
   {
