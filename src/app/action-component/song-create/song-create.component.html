@@ -1,0 +1,121 @@
+
+<div class="container" >
+
+    <h1>Create Song</h1>
+<div style="margin-top: 40px;">
+  <label for="name">Name</label>
+  <input type="text" [(ngModel)]="song.name" required ngModel name="name" #name="ngModel"/>
+  <div *ngIf="name.errors?.required">
+    <p class="errorMess">Name is required</p>
+  </div>
+</div>
+<div>
+  <label for="album">Album</label>
+  <input type="text" [(ngModel)]="song.album" required ngModel name="album" #album="ngModel"/>
+  <div *ngIf="album.errors?.required">
+    <p class="errorMess">Album name is required</p>
+  </div>
+</div>
+<div>
+  <label for="creator">Creator</label>
+  <input type="text" [(ngModel)]="song.creator" required ngModel name="creator" #creator="ngModel" />
+  <div *ngIf="creator.errors?.required">
+    <p class="errorMess"> Creator is required</p>
+  </div>
+</div>
+<div>
+  <label for="author">Author</label>
+  <input type="text" [(ngModel)]="song.author" required ngModel name="author" #author="ngModel" />
+  <div *ngIf="author.errors?.required">
+    <p class="errorMess">  Author is required</p>
+  </div>
+</div>
+<div>
+  <label for="musicType">Music Type</label>
+  <input type="text" [(ngModel)]="song.musicType" required ngModel name="musicType" #musicType="ngModel" />
+  <div *ngIf="musicType.errors?.required">
+    <p class="errorMess"> Music type  is required</p>
+  </div>
+</div>
+
+<div>
+  <label for="musicType">Description</label>
+  <input type="text" [(ngModel)]="song.description" required ngModel name="description" #description="ngModel" />
+  <div *ngIf="description.errors?.required">
+    <p class="errorMess">Description is required</p>
+  </div>
+</div>
+
+<div>
+  <label class="sbw_light">Singer</label><br />
+  <select [(ngModel)]="song.singerValues" multiple>
+     <option *ngFor="let singer of singers" [value]="singer.id">{{singer.name}}</option>
+  </select>
+</div>
+
+
+  <div style="margin-top: 20px; float: left;">
+    <p class="bottompara">Image:<p>
+    <input class="mediabutton" type="file" (change)="onFileChangedAva($event)"/>
+  </div>
+  
+  <div style="margin-top:20px; float: left;">
+   <p class="bottompara"> Song:<p>
+    <input class="mediabutton" type="file" (change)="onFileChangedMp3($event)"/>
+  </div>
+  
+    <button class="btn btn-warning" type="button" (click)="createSong()" [disabled]="showButton" style="margin-top: 30px;">Save</button>
+  
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <hr/>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Audio</th>
+      <th>Name</th>
+      <th>Album</th>
+      <th>Author</th>
+      <th>Music Type</th>
+      <th>Singer</th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let song of songs">
+    <th scope="row">{{ song.id }}</th>
+    <td>
+      <audio controls>
+        <source src="{{ song.linkMp3 }}" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </td>
+    <td scope="row">{{ song.name }}</td>
+    <td scope="row">{{ song.album }}</td>
+    <td scope="row">{{ song.author }}</td>
+    <td scope="row">{{ song.musicType }}</td>
+    <td>
+      <img src="{{ song.linkImg }}" width="200" height="200">
+    </td>
+  </tr>
+</table>
+<div class="container row">
+  <div class="col-md-12">
+    <div *ngIf="retrievedImage">
+      <img [src]="retrievedImage" />
+    </div>
+  </div>
+</div> -->

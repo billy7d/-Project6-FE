@@ -10,10 +10,14 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { QuestionComponent } from 'app/question/question.component';
-import { UserProfileComponent } from 'app/user-profile/user-profile.component';
-import { TableListComponent } from 'app/table-list/table-list.component';
+import { QuestionComponent } from 'app/action-component/question/question.component';
+import { UserProfileComponent } from 'app/action-component/user-profile/user-profile.component';
+import { TableListComponent } from 'app/action-component/table-list/table-list.component';
 import { IconsComponent } from 'app/icons/icons.component';
+import { ShowListSongComponent } from 'app/action-component/show-list-song/show-list-song.component';
+import { SongCreateComponent } from 'app/action-component/song-create/song-create.component';
+import { AddPlaylistComponent } from 'app/action-component/playlist/add-playlist/add-playlist.component';
+import { ShowCreatorPlaylistComponent } from 'app/action-component/show-creator-playlist/show-creator-playlist.component';
 
 @NgModule({
   imports: [
@@ -32,7 +36,12 @@ import { IconsComponent } from 'app/icons/icons.component';
     UserProfileComponent,
     TableListComponent,
     IconsComponent,
-    QuestionComponent
+    QuestionComponent,
+    ShowListSongComponent,
+    QuestionComponent,
+    SongCreateComponent,
+    AddPlaylistComponent,
+    ShowCreatorPlaylistComponent
   ]
 })
 

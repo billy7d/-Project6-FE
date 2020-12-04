@@ -42,7 +42,12 @@ export class LoginComponent implements OnInit {
     );
   }
   reloadPage(): void {
-    this._router.navigateByUrl("table-list");
+    this._router.navigateByUrl("listSong");
   }
-
+  register(){
+    this._router.navigateByUrl("/register");
+  }
+  back(){
+    this._router.navigateByUrl("listSong");
+  }
 }
