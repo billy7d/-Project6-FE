@@ -13,23 +13,32 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label style="color: black;">Name playlist:</label>
-                                    <input [(ngModel)]="playlist.name" name="name" type="text" minlength="3" maxlength="30" required style="margin-left: 60px;">
+                                    <input [(ngModel)]="playlist.name" type="text" minlength="3" maxlength="30"  ngModel name="name" #name="ngModel" required style="margin-left: 60px;">
                                 </div>
                             </div>
+                            <div *ngIf="name.errors?.required">
+                                <p style="color: red;"> Name is required</p> 
+                                </div>
                             <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="musictype" style="color: black;">Music type playlist:</label>
-                                    <input type="text" matInput name="music" minlength="3" maxlength="30" required [(ngModel)]="playlist.musicType" id="musictype" style="margin-left: 30px;">
+                                    <input type="text" matInput  minlength="3" maxlength="30"  ngModel name="music" #music="ngModel" required [(ngModel)]="playlist.musicType" id="musictype" style="margin-left: 30px;">
                                 </div>
                             </div>
+                            <div *ngIf="music.errors?.required">
+                                <p style="color: red;"> Music type is required</p> 
+                                </div>
                             <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="description" style="color: black;">Description playlist:</label>
-                                    <textarea name="description" minlength="3" required [(ngModel)]="playlist.description" rows="4" cols="50" style="margin-left: 30px;"></textarea>
+                                    <textarea  minlength="3" required [(ngModel)]="playlist.description"  ngModel name="description" #description="ngModel" rows="4" cols="50" style="margin-left: 30px;"></textarea>
                                 </div>
                             </div>
+                            <div *ngIf="description.errors?.required">
+                                <p style="color: red;"> Description is required</p> 
+                                </div>
                             <br>
                             <div class="row">
                                 <div class="col-md-12">
@@ -39,6 +48,7 @@
                                     </select>
                                 </div>
                             </div>
+                            
                             <br>
                             <button mat-raised-button type="submit" (click)="onclickAdd()" class="btn btn-primary" style="margin-left: 360px;">Create playlist</button>
                             <div class="clearfix"></div>

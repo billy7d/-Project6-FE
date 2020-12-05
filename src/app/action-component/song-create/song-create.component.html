@@ -17,7 +17,7 @@
                               </div>
                           </div>
                           <div *ngIf="name.errors?.required">
-                          <p> Name is required</p> 
+                          <p style="color: red;"> Name is required</p> 
                           </div>
                           <br>
                           <div class="row">
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div *ngIf="author.errors?.required">
-                        <p> Author name is required</p> 
+                        <p style="color: red;"> Author name is required</p> 
                         </div>
                         <br>
                           <div class="row">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div *ngIf="album.errors?.required">
-                        <p>  Name is required </p>
+                        <p style="color: red;"> Album name is required </p>
                         </div>
                           <br>
                           <div class="row">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div *ngIf="musicType.errors?.required">
-                          <p>  Name is required </p>
+                          <p style="color: red;">  Music type is required </p>
                         </div>
                           <br>
                           <div class="row">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div *ngIf="description.errors?.required">
-                          <p>  Name is required </p>
+                          <p style="color: red;">  Description is required </p>
                         </div>
                           <br>
                           <div>
