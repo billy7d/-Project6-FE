@@ -1,21 +1,22 @@
 <footer class="footer ">
-    <div class="container-fluid">
-        <nav class="pull-left">
+    <div class="container">
+       
             <table class="table">
                   <tr>
-                    <td><img src={{songs.linkImg}} width="90px"></td>
-                    <td>{{songs.name}}</td>
-                    <td><audio controls><source src={{songs.linkMp3}}></audio></td>
-                    <td>{{songs.musicType}}</td>
-                    <td>{{songs.author}}</td>
+                    <td><img src={{songs.linkImg}} width="90px" style="margin-left: -57px;"></td>
+                    <!-- <td><label style="color: #835694;
+                        font-size: 20px; margin-top: 30px;">{{songs.name}}</label></td> -->
+                    <td><audio controls="controls" src="{{songs.linkMp3}}" style="margin-bottom: -52px;margin-bottom: -52px;margin-left: -438px;"></audio></td> 
+                    <!-- <td>{{songs.musicType}}</td>
+                    <td>{{songs.author}}</td> -->
                   </tr>
               </table>
-        </nav>
-        <div class="copyright pull-right">
-            &copy;
+      
+        <!-- <div class="copyright pull-right"> -->
+            <!-- &copy;
             {{test | date: 'yyyy'}}, made with love by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-        </div>
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web. -->
+        <!-- </div> -->
     </div>
 </footer>
 
