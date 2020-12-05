@@ -44,10 +44,10 @@ getAllSong(){
       this.songs= res;}, err => {  window.alert("Sai rồi bạn!")})
 }
 getAllPlaylist(){
-  debugger
+  // debugger
   this.http.get("http://localhost:8080/playlists/newPlaylist")
   .subscribe(res => {
-    debugger
+    // debugger
      this.playlist= res;
     }, err => {  window.alert("Sai rồi bạn!")})
 }
