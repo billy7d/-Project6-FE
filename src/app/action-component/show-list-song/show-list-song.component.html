@@ -89,6 +89,7 @@
                             <td>{{i.author}}</td>
                             <td><audio controls><source src={{i.linkMp3}}></audio></td>
                             <td>{{i.musicType}}</td>
+                            <td><button class="btn btn-primary" (click)="listen(i)">Nghe nhạc</button></td>
                           </tr>
                         </tbody>
                       </table>

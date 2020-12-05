@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from 'app/_services/common.service';
+import { DataService } from 'app/_services/data.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,10 +8,21 @@ import { DataService } from 'app/_services/common.service';
 })
 export class FooterComponent implements OnInit {
   test : Date = new Date();
+  songs: any ={
+    name: "",
+    description: "",
+    linkMp3: "",
+    linkImg:"",
+    author: "",
+    creator: "",
+    musicType: "",
+    album: "",
+    view:Number
+  };
   constructor(private service: DataService) { }
   data: any= [];
   ngOnInit() {
-    this.service.currentMessage.subscribe(message => this.data = message);
+    this.service.share.subscribe(x=> this.songs = x);
   }
   
 

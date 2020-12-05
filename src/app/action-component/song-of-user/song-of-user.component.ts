@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'app/_services/common.service';
 import { TokenStorageService } from 'app/_services/token-storage.service';
 
 @Component({
@@ -23,7 +22,7 @@ export class SongOfUserComponent implements OnInit {
 
   currentUser: any;
 
-  constructor(private http: HttpClient,private token: TokenStorageService,private data: DataService) { }
+  constructor(private http: HttpClient,private token: TokenStorageService) { }
 
   ngOnInit(): void {
     debugger

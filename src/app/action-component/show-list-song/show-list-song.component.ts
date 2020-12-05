@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { DataService } from 'app/_services/common.service';
+import { DataService } from 'app/_services/data.service';
 import { TokenStorageService } from 'app/_services/token-storage.service';
 
 @Component({
@@ -51,6 +51,8 @@ getAllPlaylist(){
      this.playlist= res;
     }, err => {  window.alert("Sai rồi bạn!")})
 }
-
+listen(i){
+this.data.updateData(i);
+}
 
 }
