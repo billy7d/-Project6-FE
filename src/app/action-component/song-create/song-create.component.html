@@ -1,9 +1,93 @@
-<div>
-  <div>
-    <div *ngIf="message">{{ message }}</div>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-7">
+              <div class="card">
+                  <div class="card-header card-header-danger" style="background: white;">
+                      <h4 class="card-title" style="color: black;">Create Song</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <label style="color: black;">Song name:</label>
+                                  <input [(ngModel)]="song.name" type="text" minlength="3" maxlength="30" required ngModel name="name" #name="ngModel" style="margin-left: 58px;">
+                              </div>
+                          </div>
+                          <div *ngIf="name.errors?.required">
+                          <p> Name is required</p> 
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <label style="color: black;">Author:</label>
+                                <input [(ngModel)]="song.author" type="text" minlength="3" maxlength="30" required ngModel name="author" #author="ngModel" style="margin-left: 84px;">
+                            </div>
+                        </div>
+                        <div *ngIf="author.errors?.required">
+                        <p> Author name is required</p> 
+                        </div>
+                        <br>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <label style="color: black;">Album:</label>
+                                <input [(ngModel)]="song.album"  type="text" minlength="3" maxlength="30" required ngModel name="album" #album="ngModel" style="margin-left: 86px;">
+                            </div>
+                        </div>
+                        <div *ngIf="album.errors?.required">
+                        <p>  Name is required </p>
+                        </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <label style="color: black;">Music type:</label>
+                                <input [(ngModel)]="song.musicType"  type="text" minlength="3" maxlength="30" required ngModel name="musicType" #musicType="ngModel" style="margin-left: 60px;">
+                            </div>
+                        </div>
+                        <div *ngIf="musicType.errors?.required">
+                          <p>  Name is required </p>
+                        </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <label style="color: black;">Description:</label>
+                                <input [(ngModel)]="song.description"  type="text" minlength="3" maxlength="30" required ngModel name="description" #description="ngModel" style="margin-left: 60px;">
+                            </div>
+                        </div>
+                        <div *ngIf="description.errors?.required">
+                          <p>  Name is required </p>
+                        </div>
+                          <br>
+                          <div>
+                            <div>
+                              <label style="color: black;">Img:</label>
+                              <input style="margin-left: 23px;" type="file" (change)="onFileChangedAva($event)"/>
+                            </div>
+                            <div>
+                              <label style="color: black;">Song:</label>
+                              <input style="margin-left: 15px;" type="file" (change)="onFileChangedMp3($event)"/>
+                            </div>
+                    
+                          </div>
+                          
+                  
+                          <button mat-raised-button type="button" (click)="createSong()"  [disabled]="showButton" class="btn btn-primary" style="margin-left: 360px;">Create playlist</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-2"></div>
+      </div>
   </div>
 </div>
 
+
+
+
+<!-- 
 <div>
   <div>
     <h1>Upload Image</h1>
@@ -24,13 +108,6 @@
     Album name is required
   </div>
 </div>
-<!-- <div>
-  <label for="creator">Creator</label>
-  <input type="text" [(ngModel)]="song.creator" required ngModel name="creator" #creator="ngModel" />
-  <div *ngIf="creator.errors?.required">
-    Creator is required
-  </div>
-</div> -->
 <div>
   <label for="author">Author</label>
   <input type="text" [(ngModel)]="song.author" required ngModel name="author" #author="ngModel" />
@@ -61,8 +138,6 @@
   </select>
 </div>
 
-
-
 <div>
   <div>
     Img:
@@ -75,51 +150,7 @@
   <div>
   <button type="button" (click)="createSong()" [disabled]="showButton">Save</button>
   </div>
-</div>
+</div> -->
 
 
 
-
-
-
-
-
-<hr/>
-
-<table border="1">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Audio</th>
-      <th>Name</th>
-      <th>Album</th>
-      <th>Author</th>
-      <th>Music Type</th>
-      <th>Singer</th>
-
-    </tr>
-  </thead>
-  <tr *ngFor="let song of songs">
-    <th scope="row">{{ song.id }}</th>
-    <td>
-      <audio controls>
-        <source src="{{ song.linkMp3 }}" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </td>
-    <td scope="row">{{ song.name }}</td>
-    <td scope="row">{{ song.album }}</td>
-    <td scope="row">{{ song.author }}</td>
-    <td scope="row">{{ song.musicType }}</td>
-    <td>
-      <img src="{{ song.linkImg }}" width="200" height="200">
-    </td>
-  </tr>
-</table>
-<div class="container row">
-  <div class="col-md-12">
-    <div *ngIf="retrievedImage">
-      <img [src]="retrievedImage" />
-    </div>
-  </div>
-</div>
