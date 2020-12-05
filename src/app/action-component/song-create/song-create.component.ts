@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpEventType, HttpResponse, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TokenStorageService } from 'app/_services/token-storage.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-song-create',
@@ -9,15 +11,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./song-create.component.css'],
 })
 export class SongCreateComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient,private tokenService:TokenStorageService, private router:Router,private actRouter:ActivatedRoute) {}
 
+  currentUser:any;
   songs: any = [];
   singers:any=[];
   song: any = {
     name: '',
     album: '',
     author: '',
-    creator:'',
+    creator:{
+      "id": null
+    },
     singerValues:[],
     musicType: '',
     description:'',
@@ -37,6 +42,8 @@ export class SongCreateComponent implements OnInit {
   ngOnInit(): void {
     this.getAllSong();
     this.getAllSinger();
+    this.currentUser = this.tokenService.getUser();
+   
   }
 
 
@@ -72,7 +79,7 @@ export class SongCreateComponent implements OnInit {
       .subscribe((res) => {
         if (res.status === 200) {
 
-          // this.song.linkMp3 = res.body.linkMp3;
+          this.song.linkMp3 = res.body.linkMp3;
           this.showButton = false;
         }
       }),((err) =>{});
@@ -96,19 +103,22 @@ export class SongCreateComponent implements OnInit {
       .subscribe((res) => {
         if (res.status === 200) {
           
-          // this.song.linkImg = res.body.linkImg;
+          this.song.linkImg = res.body.linkImg;
 
         }
       }),((err) =>{});
   }
 
   createSong() {
-    debugger
+    debugger;
+    this.song.creator.id = this.currentUser.id;
     this.httpClient
       .post('http://localhost:8080/songs/create', this.song)
       .subscribe((res) => {
-       
         this.getAllSong();
+        window.alert("create success");
+        this.router.navigateByUrl("/listSong");
+        
       });
   }
 }

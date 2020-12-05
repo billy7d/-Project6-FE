@@ -49,7 +49,7 @@ export class AddPlaylistComponent implements OnInit {
       this.playlist.songQuantity.push(addSong);
     }
     this.playlist.creator.id = this.currentUser.id;
-    this.http.post("http://localhost:8080/playlists/createNewPlaylist",this.playlist)
+    this.http.post("http://localhost:8080/playlists/create",this.playlist)
     .subscribe(res => {
       debugger
       this.listIds = null;
