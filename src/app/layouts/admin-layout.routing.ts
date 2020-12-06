@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AddPlaylistComponent } from 'app/action-component/playlist/add-playlist/add-playlist.component';
+import { DetailPlaylistComponent } from 'app/action-component/playlist/detail-playlist/detail-playlist.component';
  
  
 import { QuestionComponent } from 'app/action-component/question/question.component';
@@ -21,4 +22,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'myListSong', component: SongOfUserComponent},
     { path: 'myPlaylist', component: ShowCreatorPlaylistComponent},
     { path: 'createPlaylist', component: AddPlaylistComponent},
+    { path: 'detailPlaylist', component: DetailPlaylistComponent}
 ];

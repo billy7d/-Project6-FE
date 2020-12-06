@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'app/_services/data.service';
 import { TokenStorageService } from 'app/_services/token-storage.service';
 
@@ -29,14 +30,27 @@ export class ShowListSongComponent implements OnInit {
     view:Number,
     linkImg:""
   }
+  singer:any={
+    name:"",
+    gender:"",
+    birthday:"",
+    musicType:"",
+    story:"",
+    band:"",
+    linkImg:"",
+    song:{
+      id:Number
+    }
+  }
   playlists:any=[];
   currentUser: any;
-  constructor(private http: HttpClient,private token: TokenStorageService,private data: DataService) { }
+  constructor(private http: HttpClient,private token: TokenStorageService,private data: DataService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllSong();
     this.getAllPlaylist();
     this.currentUser = this.token.getUser();
+    this.getAllSinger();
   }
 getAllSong(){
   this.http.get("http://localhost:8080/songs/newSong")
@@ -44,15 +58,26 @@ getAllSong(){
       this.songs= res;}, err => {  window.alert("Sai rồi bạn!")})
 }
 getAllPlaylist(){
-  // debugger
   this.http.get("http://localhost:8080/playlists/newPlaylist")
   .subscribe(res => {
-    // debugger
      this.playlist= res;
     }, err => {  window.alert("Sai rồi bạn!")})
 }
 listen(i){
 this.data.updateData(i);
+}
+
+getAllSinger(){
+  this.http.get("http://localhost:8080/singers/newSinger")
+  .subscribe(res => {
+     this.singer= res;
+    }, err => {  window.alert("Sai rồi bạn!")})
+}
+
+listenPlaylist(a){ 
+  debugger
+  this.data.updatePlaylist(a);
+  this.router.navigateByUrl("/detailPlaylist");
 }
 
 }

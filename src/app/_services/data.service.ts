@@ -17,8 +17,26 @@ export class DataService {
   };
   private content = new BehaviorSubject<any>(this.songs);
   public share = this.content.asObservable();
-  constructor() { }
   updateData(text){
     this.content.next(text);
   }
+
+
+  playlist: any = {
+    name:"",
+    musicType: "",
+    description: "",
+    songQuantity: "",
+    dateCreated:"",
+    view:Number,
+    linkImg:""
+  }
+  private contentPlaylist = new BehaviorSubject<any>(this.playlist);
+  public sharePlaylist = this.contentPlaylist.asObservable();
+  updatePlaylist(playlist){
+    this.contentPlaylist.next(playlist);
+  }
+
+  constructor() { }
+  
 }

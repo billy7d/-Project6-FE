@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label style="color: black;">Name playlist:</label>
-                                    <input [(ngModel)]="playlist.name" type="text" minlength="3" maxlength="30"  ngModel name="name" #name="ngModel" required style="margin-left: 60px;">
+                                    <input [(ngModel)]="playlist.name" type="text" minlength="3" maxlength="30"  ngModel name="name" #name="ngModel" required style="margin-left: 60px; width: 377px;">
                                 </div>
                             </div>
                             <div *ngIf="name.errors?.required">
@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="musictype" style="color: black;">Music type playlist:</label>
-                                    <input type="text" matInput  minlength="3" maxlength="30"  ngModel name="music" #music="ngModel" required [(ngModel)]="playlist.musicType" id="musictype" style="margin-left: 30px;">
+                                    <input type="text" matInput  minlength="3" maxlength="30"  ngModel name="music" #music="ngModel" required [(ngModel)]="playlist.musicType" id="musictype" style="margin-left: 30px; width: 377px;">
                                 </div>
                             </div>
                             <div *ngIf="music.errors?.required">
@@ -48,7 +48,19 @@
                                     </select>
                                 </div>
                             </div>
-                            
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="avatar">Choose Avatar:</label>
+                                    <input style="width: 200px;margin-left: 33px;" type="file" (change)="onFileChangedAva($event)"/>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="tuan">Thông báo: {{tuan}}</label>
+                                </div>
+                            </div>
                             <br>
                             <button mat-raised-button type="submit" (click)="onclickAdd()" class="btn btn-primary" style="margin-left: 360px;">Create playlist</button>
                             <div class="clearfix"></div>
