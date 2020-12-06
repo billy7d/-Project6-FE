@@ -72,9 +72,10 @@ export class AddPlaylistComponent implements OnInit {
       this.http.post('http://localhost:8080/singers/uploadava', uploadImgData, {observe: 'response',responseType: "json"})
         .subscribe((res) => {
           if (res.status === 200) {
-            this.image = res.body.linkImg;
-            this.tuan="bấm được create rồi bạn eey!"
+            // this.image = res.body.linkImg;
+            
             this.showButton = false;
+            this.tuan="bấm được create rồi bạn eey!"
           }
         }),((err) =>{});
     }

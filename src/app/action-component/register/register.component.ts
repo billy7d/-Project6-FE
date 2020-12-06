@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.router.navigateByUrl("listSong")
       },
       err => {
         this.errorMessage = err.error.message;
@@ -30,6 +31,6 @@ export class RegisterComponent implements OnInit {
     );
   }
   back(){
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl("login");
   }
 }

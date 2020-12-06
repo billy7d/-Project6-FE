@@ -79,7 +79,7 @@ export class SongCreateComponent implements OnInit {
       .subscribe((res) => {
         if (res.status === 200) {
 
-          // this.song.linkMp3 = res.body.linkMp3;
+          this.song.linkMp3 = res.body.linkMp3;
           this.showButton = false;
         }
       }),((err) =>{});
@@ -103,7 +103,7 @@ export class SongCreateComponent implements OnInit {
       .subscribe((res) => {
         if (res.status === 200) {
           
-          // this.song.linkImg = res.body.linkImg;
+          this.song.linkImg = res.body.linkImg;
 
         }
       }),((err) =>{});

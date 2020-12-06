@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-4"><img src={{singer.linkImg}} width="100%" height="300px"> </div>
+<div class="col-8">
+    <h1 style="color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;"></h1>
+    <h4>{{singer.name}}</h4>
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-1"></div>
+<div class="main-content col-md-10">
+  <div class="col-md-12" style="margin-top: 60px">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody *ngFor="let i of singer.songList">
+              <tr>
+                <td><img src="{{ i.linkImg }}" width="90px" /></td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.description }}</td>
+                <td>
+                  <audio controls><source src="{{ i.linkMp3 }}" /></audio>
+                </td>
+                <!-- <td>{{ i.musicType }}</td> -->
+                <td>
+                  <button class="btn btn-primary" (click)="listen(i)">
+                    Nghe nhạc
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-1"></div>
+</div>

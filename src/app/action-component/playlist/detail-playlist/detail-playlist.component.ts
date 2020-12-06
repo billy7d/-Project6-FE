@@ -19,6 +19,7 @@ export class DetailPlaylistComponent implements OnInit {
   constructor(private service: DataService) { }
 
   ngOnInit(): void {
+    debugger
     this.service.sharePlaylist.subscribe(x => this.playlist=x);
   }
   listen(i){

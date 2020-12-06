@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
+     debugger
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
@@ -42,12 +43,12 @@ export class LoginComponent implements OnInit {
     );
   }
   reloadPage(): void {
-    this._router.navigateByUrl("listSong");
+    this._router.navigateByUrl("/listSong");
   }
   register(){
     this._router.navigateByUrl("/register");
   }
   back(){
-    this._router.navigateByUrl("listSong");
+    this._router.navigateByUrl("/listSong");
   }
 }

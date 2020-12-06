@@ -4,6 +4,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
+  constructor() { }
+  
+  
   songs: any ={
     name: "",
     description: "",
@@ -21,7 +24,7 @@ export class DataService {
     this.content.next(text);
   }
 
-
+//
   playlist: any = {
     name:"",
     musicType: "",
@@ -33,10 +36,31 @@ export class DataService {
   }
   private contentPlaylist = new BehaviorSubject<any>(this.playlist);
   public sharePlaylist = this.contentPlaylist.asObservable();
+  
   updatePlaylist(playlist){
     this.contentPlaylist.next(playlist);
   }
 
-  constructor() { }
+  singer: any = {
+    gender: "",
+    birthday: "",
+    musicType: "",
+    story: "",
+    band: "",
+    view: "",
+    linkImg: "",
+    name: "",
+    songList: ""
+  };
+  
+  private contentSinger = new BehaviorSubject<any>(this.singer);
+  public shareSinger = this.contentSinger.asObservable();
+  
+  updateSinger(singer){
+    debugger
+    this.contentSinger.next(singer);
+  }
+
+  
   
 }

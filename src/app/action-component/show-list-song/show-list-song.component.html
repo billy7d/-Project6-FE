@@ -130,7 +130,7 @@
   <div class="col-md-1"></div>
 </div>
 <div class="container">
-  <h2  style="color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">Playlist live Show</h2>
+  <h2  style="text-align: center;color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">Playlist live Show</h2>
   <div class="row" style="margin-right: -110px;">
     <div class="col-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let a of playlist">
       <!-- Card Wider -->
@@ -163,14 +163,16 @@
 
 <!-- Card Wider -->
 <div class="container">
-  <h2  style="color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">Singer live Show</h2>
+
+  <h2   style="text-align: center; color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">Singer live Show</h2>
+
   <div class="row" style="margin-right: -110px;">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let a of singer">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let singer of singers">
       <!-- Card Wider -->
       <div class="card card-cascade-danger wider" style="width: 75%;">
         <!-- Card image -->
         <div class="view view-cascade overlay">
-          <img class="card-img-top" width="100%" src="{{ a.linkImg }}" height="250px" alt="Card image cap" />
+          <img class="card-img-top" width="100%" src="{{ singer.linkImg }}" height="250px" alt="Card image cap" />
           <!-- chen link nhac details -->
           <a href="#!">
             <div class="mask rgba-white-slight"></div>
@@ -180,9 +182,13 @@
         <div class="card-body card-body-danger card-body-cascade text-center pb-0">
           <!-- Title -->
           <h4 class="card-title" style="color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">
-            <strong>{{ a.name }}</strong>
+            <strong>{{ singer.name }}</strong>
           </h4>
+          <h5 class="blue-text pb-2">
+            <button class="btn btn-primary" (click)="detailSinger(singer)">Detail Singer</button>
+          </h5>
         </div>
+        
       </div>
     </div>
   </div>

@@ -17,6 +17,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout.component';
 import { RegisterComponent } from './action-component/register/register.component';
 import { SongOfUserComponent } from './action-component/song-of-user/song-of-user.component';
 import { DetailPlaylistComponent } from './action-component/playlist/detail-playlist/detail-playlist.component';
+import { DetailSingerComponent } from './action-component/detail-singer/detail-singer.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { DetailPlaylistComponent } from './action-component/playlist/detail-play
     AdminLayoutComponent,
     LoginComponent,
     RegisterComponent,
+    DetailSingerComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
