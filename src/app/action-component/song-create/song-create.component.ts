@@ -110,7 +110,7 @@ export class SongCreateComponent implements OnInit {
   }
 
   createSong() {
-    debugger;
+    
     this.song.creator.id = this.currentUser.id;
     this.httpClient
       .post('http://localhost:8080/songs/create', this.song)

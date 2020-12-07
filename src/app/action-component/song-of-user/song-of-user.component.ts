@@ -1,3 +1,4 @@
+import { DataService } from 'app/_services/data.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'app/_services/token-storage.service';
@@ -22,12 +23,13 @@ export class SongOfUserComponent implements OnInit {
 
   currentUser: any;
 
-  constructor(private http: HttpClient,private token: TokenStorageService) { }
+  constructor(private http: HttpClient,private token: TokenStorageService,private data: DataService) { }
 
   ngOnInit(): void {
     debugger
     this.currentUser = this.token.getUser();
   this.showSongsOfUser();
+  this.data.shareSongOfUser.subscribe((x) => (this.songsOfUser = x));
   }
 
   showSongsOfUser(){
@@ -38,4 +40,8 @@ export class SongOfUserComponent implements OnInit {
     this.songsOfUser= res;}, err => {  window.alert("Sai rồi bạn!")})
   }
 
+
+  listen(i) {
+    this.data.updateData(i);
+  }
 }

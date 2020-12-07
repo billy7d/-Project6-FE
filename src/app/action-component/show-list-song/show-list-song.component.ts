@@ -60,6 +60,7 @@ export class ShowListSongComponent implements OnInit {
   }
   getAllSong() {
   
+    debugger
     this.http.get("http://localhost:8080/songs/newSong").subscribe(
       (res) => {
         this.songs = res;

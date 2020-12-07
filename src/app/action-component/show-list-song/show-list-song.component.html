@@ -24,10 +24,7 @@
       </div>
       <div class="carousel-caption">
         <h3 class="h3-responsive">Connect on HLT</h3>
-        <p>
-          Discover, stream, and share a constantly expanding mix of music from
-          emerging and major artists around the world.
-        </p>
+    
       </div>
     </div>
     <div class="carousel-item">
@@ -42,10 +39,7 @@
       </div>
       <div class="carousel-caption">
         <h3 class="h3-responsive">Connect on HLT</h3>
-        <p>
-          Discover, stream, and share a constantly expanding mix of music from
-          emerging and major artists around the world.
-        </p>
+    
       </div>
     </div>
     <div class="carousel-item">
@@ -98,7 +92,7 @@
       <div class="col-md-12" style="margin-top: 60px">
         <div class="card">
           <div class="card-header card-header-danger" style="background: white">
-            <h4 class="card-title" style="color: black">Recently added list</h4>
+            <h4 class="card-title" style="color: black">RECENTLY ADDED</h4>
             <!-- <p class="card-category"> Here you are? </p> -->
           </div>
           <div class="card-body">
@@ -110,9 +104,9 @@
                     <td>{{ i.name }}</td>
                     <td>{{ i.author }}</td>
                     <td>
-                      <audio controls><source src="{{ i.linkMp3 }}" /></audio>
+                      <!-- <audio controls><source src="{{ i.linkMp3 }}" /></audio> -->
                     </td>
-                    <td>{{ i.musicType }}</td>
+                    <!-- <td>{{ i.musicType }}</td> -->
                     <td>
                       <button class="btn btn-primary" (click)="listen(i)">
                         Nghe nhạc
@@ -129,8 +123,14 @@
   </div>
   <div class="col-md-1"></div>
 </div>
+
+
+
+<!--View playlist -->
 <div class="container">
-  <h2  style="text-align: center;color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">Playlist live Show</h2>
+
+  <h2  style="text-align: center;color:black; text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;font-size: 41px;
+  margin-top: 44px;">PLAYLIST</h2>
   <div class="row" style="margin-right: -110px;">
     <div class="col-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let a of playlist">
       <!-- Card Wider -->
@@ -159,12 +159,16 @@
       </div>
     </div>
   </div>
-</div>
 
+
+
+
+<!-- View Singer -->
 <!-- Card Wider -->
 <div class="container">
 
-  <h2   style="text-align: center; color: rgb(167, 88, 219); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;">Singer live Show</h2>
+  <h2   style="text-align: center; color: rgb(26, 4, 41); text-shadow: rgb(27, 3, 66); font-weight: 700; font-size: x-large;font-size: 41px;
+  margin-top: 44px;">SINGER</h2>
 
   <div class="row" style="margin-right: -110px;">
     <div class="col-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let singer of singers">

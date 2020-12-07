@@ -61,6 +61,27 @@ export class DataService {
     this.contentSinger.next(singer);
   }
 
+
+  songsOfUser: any = {
+    name: "",
+    description: "",
+    linkMp3: "",
+    linkImg:"",
+    author: "",
+    creator: "",
+    musicType: "",
+    album: "",
+    view:Number
+  }
+
+  private contentSongOfUser = new BehaviorSubject<any>(this.songsOfUser);
+  public shareSongOfUser = this.contentSongOfUser.asObservable();
+  
+  updateSongOfUser(singer){
+    debugger
+    this.contentSinger.next(singer);
+  }
+
   
   
 }
